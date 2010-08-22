@@ -38,4 +38,12 @@ module ::TeamFun::Helpers
   def options_to_attributes(options)
     options.inject('') { |str, hash| str << " #{hash[0].to_s}='#{hash[1].to_s}'" }
   end
+  
+  def script_tag(location)
+    "<script type='text/javascript' src='#{location}'></script>"
+  end
+  
+  def render_partial(sym)
+    haml sym, :layout => false
+  end
 end

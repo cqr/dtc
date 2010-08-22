@@ -6,3 +6,8 @@ load File.join(File.dirname(__FILE__), 'environment.rb')
 get '/' do
   haml :introduction
 end
+
+get '/style.css' do
+  content_type :css
+  sass :'style/style'
+end

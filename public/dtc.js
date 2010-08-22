@@ -1,6 +1,15 @@
 $(function(){
   
+  $('#map').css('height', window.innerHeight);
+	
+	$('body').css('height', 500);
+	
+	$('#dialog').css({width: window.innerWidth - 70, height: window.innerHeight - 70});
+  
   window.scroll(0,500);
+  $('#im_down').css({bottom: 'none !important', top: window.innerHeight - $('#im_down').height()})
+  
+  $('.info').css('width', window.innerWidth - 6);
   
 	var notify = function(field, title, message){
 		done_loading();
@@ -12,13 +21,20 @@ $(function(){
 	},
 	done_loading = function(){
 		$('#loading').hide();
+	},
+	dialog = function(text){
+	  $('#dialog').text(text).show();
 	};
 	
+	$('#im_down').click(function(){
+	  if (navigator.notification){
+	    navigator.notification.vibrate();
+	  }
+	  dialog('this is it.');
+	  return false;
+	});
+	
 	done_loading();
-	
-	$('#map').css('height', window.innerHeight / 2);
-	
-	$('body').css('height', 500);
 	
 	if (navigator.geolocation) {
 	  var latlng = new google.maps.LatLng(42, -71);
@@ -31,11 +47,7 @@ $(function(){
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
     var map = new google.maps.Map(document.getElementById("map"), myOptions);
-		
-		
-		
 		loading();
-		
 		
 		navigator.geolocation.getCurrentPosition(function(location){
 		  latlng = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
@@ -45,10 +57,10 @@ $(function(){
               title:"You are here!"
       });
       done_loading();
-      map.panTo({'latLng': latlng});
-			notify('success', 'got it.', 'now that you know where you are, you might be down.');
+      map.panTo(latlng);
+      notify('success', 'okay', 'there are like 4 of you');
 		}, function(){
-			notify('error', 'we have a problem, yo.', 'you can try reloading the page or whatevs.');
+      notify('error', 'you suck', 'either you denied me access to know where you are or there is another problem.')
 		});
 	} else {
 		notify('error', 'no how no way', 'come back with more chrome on.');

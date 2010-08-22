@@ -43,3 +43,60 @@ body
   top: 0px
   right: 0px
   z-index: 1
+button
+  display: block
+  width: 100%
+  position: absolute
+  bottom: 2px
+  left: 0px
+  background: #fff
+  border-radius: 25px
+  margin: 0
+  padding: 1px 0
+  background: -webkit-gradient(linear,left top, left bottom, color-stop(0, #F9C), color-stop(1, #F59))
+  color: #fEE
+  border: 1px solid #F37
+  text-shadow: 0 -1px 0 #c36
+  -webkit-box-shadow: 0 1px 0 #FFF
+  h4
+    border-radius: 25px
+    font-size: 35px
+    margin: 0
+    padding: 0
+    -webkit-box-shadow: 0 -1px 0 #FEE
+  &:active
+    background: -webkit-gradient(linear,left top, left bottom, color-stop(0, #f59), color-stop(1, #f9c)) !important
+    -webkit-box-shadow: 0 -1px 0 #FFF
+    h4
+      -webkit-box-shadow: 0 1px 0 #FEE
+      text-shadow: 0 -1px 0 #b25
+      color: #EDD
+      position: relative
+      top: 1px
+.info
+  display: none
+  position: absolute
+  top: 4px
+  left: 3px
+  z-index: 3
+  width: 99%
+  background: rgba(0,0,0,0.5)
+  border-radius: 25px
+  h1
+    font-size: 35px
+    padding: 3px 10px
+    margin: 0
+  p
+    font-size: 22px
+    padding: 0 10px
+    margin: 0
+    margin-bottom: 10px
+#dialog
+  display: none
+  position: absolute
+  top: 10px
+  left: 10px
+  border-radius: 15px
+  background: rgba(0,0,0,0.7)
+  z-index: 25
+  padding: 25px

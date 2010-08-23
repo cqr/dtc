@@ -6,6 +6,13 @@ namespace :db do
     ActiveRecord::Migration.verbose = true
     ActiveRecord::Migrator.migrate("db/migrate")
   end
+  
+  task(:rollback => :environment) do
+    require 'logger'
+    ActiveRecord::Base.logger = Logger.new(STDOUT)
+    ActiveRecord::Migration.verbose = true
+    ActiveRecord::Migrator.rollback('db/migrate')
+  end
 end
 
 desc 'Runs cucumber features for this project'

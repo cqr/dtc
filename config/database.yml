@@ -1,8 +1,9 @@
 # Edit this file to reflect your database settings
 
 development:
-    adapter: sqlite3
-    database: db/development.sqlite.db
+    adapter: mysql
+    user: root
+    database: dtc_dev
     
 production:
     adapter: sqlite3

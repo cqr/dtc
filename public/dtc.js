@@ -1,10 +1,16 @@
-$(function(){
+(function(){
   
-  $('#map').css('height', window.innerHeight);
+  var $ = document.querySelector;
+  var $id = document.getElementById;
+  var $c = document.getElementByClassName;
+  var $t = document.getElementByTagName;
+  
+  $id('map').style.height = window.innerHeight;
 	
-	$('body').css('height', 500);
+	$t('body').style.height = 500;
 	
-	$('#dialog').css({width: window.innerWidth - 70, height: window.innerHeight - 70});
+	$id('dialog').style.width  = window.innerWidth - 70;
+	$id('dialog').style.height = window.innerHeight - 70;
   
   window.scroll(0,500);
   $('#im_down').css({bottom: 'none !important', top: window.innerHeight - $('#im_down').height()})
@@ -65,4 +71,5 @@ $(function(){
 	} else {
 		notify('error', 'no how no way', 'come back with more chrome on.');
 	}
-});
+})();
+

@@ -10,7 +10,7 @@ else
   gem 'sqlite3'
 end
 
-gem 'mysql'
+gem 'postgres'
 
 # You can add your own gems to this file
 # and then run bundle install to make sure they

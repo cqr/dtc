@@ -11,7 +11,7 @@ else
 end
 
 gem 'postgres'
-
+gem 'pg'
 # You can add your own gems to this file
 # and then run bundle install to make sure they
 # are all there.

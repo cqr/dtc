@@ -23,7 +23,6 @@ end
 get %r{/cuddlers/near/(.*)/(.*)/?} do |lat, lng|
   lat, lng = lat.to_f, lng.to_f
   cuddlers = Cuddler.within(25, :of => {:lat => lat, :lng => lng}).where('created_at > ?', 1.hour.ago)
-  puts cuddlers.select(:id, :created_at).to_sql
   cuddlers.select(:id, :created_at).all.to_json(:only =>[:id, :created_at, :distance])
 end
 

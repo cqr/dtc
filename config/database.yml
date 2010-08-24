@@ -1,8 +1,8 @@
 # Edit this file to reflect your database settings
 
 development:
-    adapter: mysql
-    user: root
+    adapter: postgresql
+    user: user
     database: dtc_dev
     
 production:

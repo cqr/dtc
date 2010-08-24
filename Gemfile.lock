@@ -6,11 +6,15 @@ dependencies:
     version: ">= 3.0.0.rc"
     require: 
     - active_record
-  sqlite3-ruby: 
+  pg: 
     group: 
     - :default
     version: ">= 0"
   haml: 
+    group: 
+    - :default
+    version: ">= 0"
+  sqlite3-ruby: 
     group: 
     - :default
     version: ">= 0"
@@ -78,7 +82,7 @@ specs:
 - rubyzip: 
     version: 0.9.4
 - selenium-webdriver: 
-    version: 0.0.27
+    version: 0.0.28
 - capybara: 
     version: 0.3.9
 - configuration: 
@@ -99,6 +103,8 @@ specs:
     version: 3.0.17
 - launchy: 
     version: 0.3.7
+- pg: 
+    version: 0.9.0
 - postgres: 
     version: 0.7.9.2008.01.28
 - rspec: 
@@ -107,7 +113,7 @@ specs:
     version: "1.0"
 - sqlite3-ruby: 
     version: 1.3.1
-hash: d323dc2cff12e01f389ae3651e4bc1643a791d37
+hash: afe5ad7afc4ebb3571d4f9fe29fbe336146055bc
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

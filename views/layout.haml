@@ -3,9 +3,6 @@
   %head
     %title Are you down?
     %link{:rel=>'stylesheet', :type=>'text/css', :href => 'style.css'}/
-    = script_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
-    = script_tag 'http://maps.google.com/maps/api/js?sensor=false'
-    = script_tag 'dtc.js'
     %meta(name="viewport" content="width=device-width, user-scalable=no")/
   %body
     =render_partial :nojs
@@ -13,3 +10,6 @@
     =render_partial :loading
     #map
     =yield
+    /= script_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
+    = script_tag 'http://maps.google.com/maps/api/js?sensor=false'
+    = script_tag 'dtc.js'

@@ -4,11 +4,11 @@ development:
     adapter: postgresql
     user: user
     database: dtc_dev
-    
+
 production:
     adapter: sqlite3
     database: db/production.sqlite.db
-    
+
 test:
     adapter: sqlite3
     database: db/test.sqlite.db

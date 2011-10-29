@@ -1,6 +1,6 @@
 (function(){
-  
-  
+
+
   // Dude, it's like jQuery but without all of the stuff that nobody
   // really uses and without all of the browser compatibility and jank.
   // ... Also it is way faster.
@@ -32,12 +32,12 @@
       }
     };
     q.open(method, url, true);
-    q.setRequestHeader('Content-Type','application/x-www-form-urlencoded'); 
+    q.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
     q.send(parameters);
   }
-  
+
   // and now we get into the stuff that I didn't write as a general purpose library
-    
+
   var notify = function(field, title, message){
 		done_loading();
 		var field = $i(field), h1 = $t('h1',field)[0], p = $t('p',field)[0];
@@ -65,10 +65,10 @@
 	dialog = function(text){
 	  replaceText($i('dialog'), text).style.display = 'block';
 	};
-  
+
   window.addEventListener('load',function(){
     var loc = null;
-    
+
     $i('map').style.height = window.innerHeight + 'px';
 
   	document.body.style.height = '500px';
@@ -81,9 +81,9 @@
     $i('im_down').style.top = window.innerHeight - 47 + 'px';
     $i('im_down').style.width = window.innerWidth - 8 + 'px';
     $i('im_down').style.left = '4px';
-    
+
     $('.info').style.width = window.innerWidth - 6 + 'px';
-    
+
     $i('im_down').parentNode.addEventListener('submit',function(e){
       e.preventDefault();
   	  if (navigator.notification){
@@ -95,8 +95,8 @@
   	  });
   	});
 
-    
-    
+
+
     if (navigator.geolocation) {
   	  var myOptions = {
           zoom: 15,
@@ -121,8 +121,8 @@
   		  var map = new google.maps.Map($i("map"), myOptions);
   		  latlng = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
         var marker = new google.maps.Marker({
-                position: latlng, 
-                map: map, 
+                position: latlng,
+                map: map,
                 title:"You are here!"
         });
         map.panTo(latlng);

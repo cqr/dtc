@@ -6,7 +6,7 @@ class CreateCuddlers < ActiveRecord::Migration
       t.float :long
     end
   end
-  
+
   def self.down
     drop_table :cuddlers
   end

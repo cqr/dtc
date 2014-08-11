@@ -4,7 +4,7 @@ Bundler.require(:default, (ENV['RACK_ENV'].downcase.intern))
 $: << File.dirname(__FILE__)
 
 class Environment
-  
+
   def self.reload!
     [:models, :lib].each do |dir|
       Dir[File.join(dir.to_s, '*')].each do |file|
@@ -16,26 +16,26 @@ class Environment
     end
     ActiveRecord::Base.establish_connection Config.database[ENV['RACK_ENV'].downcase.underscore]
   end
-  
+
   module Config
     class << self
       def set(key, value)
         @store ||= {}
         @store[key.to_sym] = value
       end
-    
+
       def get(key)
         @store[key.to_sym]
       end
-      
+
       def [](key)
         get(key)
       end
-      
+
       def []=(key, value)
         set(key, value)
       end
-    
+
       def method_missing(key)
         get(key)
       end
